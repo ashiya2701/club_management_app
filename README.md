@@ -1,1 +1,1 @@
-# club_management_app
+# Club management app
