@@ -1,8 +1,10 @@
-import 'package:club_management/Screens/Home_Club.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'Screens/Splash_screen/splash_screen.dart';
+import 'Theme/theme.dart';
 
 void main() {
+  Get.testMode = true;
   runApp(MyApp());
 }
 
@@ -15,11 +17,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Club Manager',
+   Widget build(BuildContext context) {
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:HomeClub(),
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      home: SplashScreen(),
     );
   }
 }

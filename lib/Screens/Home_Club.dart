@@ -80,20 +80,15 @@ class _HomeClubState extends State<HomeClub> {
     return Scaffold(
       appBar: AppBar(
         // centerTitle: true,
-        title: Row(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
+            leading: IconButton(
               onPressed: () {},
               icon: const Icon(
                 Icons.menu,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(
-              width: 60,
-            ),
-            const Text(
+           
+            title: const Text(
               'Club Manager',
               style: TextStyle(
                 color: Colors.white,
@@ -101,9 +96,7 @@ class _HomeClubState extends State<HomeClub> {
                 // fontSize: 26.0,
               ),
             ),
-            const SizedBox(
-              width: 60,
-            ),
+           actions:[
             IconButton(
               onPressed: () {},
               icon: const Icon(
@@ -112,9 +105,10 @@ class _HomeClubState extends State<HomeClub> {
               ),
             ),
           ],
+          backgroundColor: Colors.black,
         ),
-        backgroundColor: Colors.black,
-      ),
+
+      
       body: Container(
         padding: const EdgeInsets.all(15.0),
         child: Column(
