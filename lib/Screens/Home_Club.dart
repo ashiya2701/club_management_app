@@ -1,3 +1,6 @@
+import 'package:club_management/Screens/attendance.dart';
+import 'package:club_management/Screens/calendar.dart';
+import 'package:club_management/Screens/hall.dart';
 import 'package:flutter/material.dart';
 
 class HomeClub extends StatefulWidget {
@@ -27,36 +30,45 @@ class _HomeClubState extends State<HomeClub> {
     );
   }
 
-  Widget _buildmyCard(String x) {
-    return Card(
-      elevation: 5.0, // set the card elevation
-      shape: RoundedRectangleBorder(
-        borderRadius:
-            BorderRadius.circular(25.0), // set the rounded corner radius
-      ),
-      child: Container(
-        width: 200.0, // set the card width
-        height: 200.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.black87, Colors.black54], // set the gradient colors
-          ),
-        ), // set the card height
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Center(
-            child: Text(
-              x,
-              style: const TextStyle(
-                color: Colors.white,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
-            ), // set the card text
+  Widget _buildmyCard(BuildContext context,String x, Widget route) {
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => route),
+        );
+      },
+      child: Card(
+        elevation: 5.0, // set the card elevation
+        shape: RoundedRectangleBorder(
+          borderRadius:
+              BorderRadius.circular(25.0), // set the rounded corner radius
+        ),
+        child: Container(
+          width: 200.0, // set the card width
+          height: 200.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFF000102),
+                Color(0xFF464B55)], // set the gradient colors
+            ),
+          ), // set the card height
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Center(
+              child: Text(
+                x,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                ),
+              ), // set the card text
+            ),
           ),
         ),
       ),
@@ -148,15 +160,15 @@ class _HomeClubState extends State<HomeClub> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildmyCard('Book a Session Slot'),
+                  _buildmyCard(context,'Book a Session Slot',SessionCalendar()),
                   const SizedBox(
                     width: 10,
                   ),
-                  _buildmyCard('Book a Hall'),
+                  _buildmyCard(context,'Book a Hall',Hall()),
                   const SizedBox(
                     width: 10,
                   ),
-                  _buildmyCard('Track Attendance'),
+                  _buildmyCard(context,'Track Attendance',Attendance()),
                 ],
               ),
             ),
@@ -176,15 +188,15 @@ class _HomeClubState extends State<HomeClub> {
                         height: 80.0,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.white,
-                              Colors.grey,
-                            ], // set the gradient colors
-                          ),
-                        ), // set the card height
+                      gradient: const LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          Color(0xFFF2F7FA),
+                          Color(0xFFE4EFF5),
+                        ], // set the gradient colors
+                      ),
+                    ),// set the card height
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Center(
@@ -198,10 +210,8 @@ class _HomeClubState extends State<HomeClub> {
                                       gradient: LinearGradient(
                                         begin: Alignment.topCenter,
                                         end: Alignment.bottomCenter,
-                                        colors: [
-                                          Colors.black87,
-                                          Colors.black54,
-                                        ], // set the gradient colors
+                                        colors: [Color(0xFF000102),
+                                          Color(0xFF464B55)], // set the gradient colors
                                       ),
                                     ),
                                     child: Padding(
