@@ -18,7 +18,7 @@ class _SessionCalendarState extends State<SessionCalendar> {
   CalendarFormat _calendarFormat = CalendarFormat.week;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  // DateTime start= DateTime()
+  var otherlist=["Alankar: 4:00 pm", "Epicure: 6 pm", "E-Cell: 10 pm"];
   @override
 
   Widget build(BuildContext context) {
@@ -114,8 +114,8 @@ class _SessionCalendarState extends State<SessionCalendar> {
            // Text('here'),
           Expanded(
             child: ListView.builder(
-              itemCount: 3, // set the number of items in the list
-              itemBuilder: (BuildContext context, int index) {
+              itemCount: otherlist.length, // set the number of items in the list
+              itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Material(
@@ -157,7 +157,7 @@ class _SessionCalendarState extends State<SessionCalendar> {
                                   )),
                               const SizedBox(width: 50.0,),
                               Text(
-                                'Other Club Sessions',
+                                otherlist[index],
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Poppins',

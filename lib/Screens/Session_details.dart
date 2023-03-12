@@ -111,7 +111,7 @@ class _DetailsState extends State<Details> {
               _buildTF('Pre-Reads', 'Fill in any pre-reads for session (if any)', pre_req,Colors.white),
           Container(
           width: 600,
-          height: 447,
+          height: 450,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
             gradient: const LinearGradient(

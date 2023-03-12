@@ -11,6 +11,7 @@ class HomeClub extends StatefulWidget {
 }
 
 class _HomeClubState extends State<HomeClub> {
+  var list = ['Linked Lists', 'Stacks/Queues','Arrays and Strings','Introduction to C++'];
   Widget _buildButton(String x) {
     return ElevatedButton(
       onPressed: () {},
@@ -119,7 +120,7 @@ class _HomeClubState extends State<HomeClub> {
                   width: 15,
                 ),
                 Text(
-                  'Hello #ClubName !',
+                  'Hello Coding Club !',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.black,
@@ -171,8 +172,9 @@ class _HomeClubState extends State<HomeClub> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 10, // set the number of items in the list
-                itemBuilder: (BuildContext context, int index) {
+                itemCount: list.length, // set the number of items in the list
+                itemBuilder: ( context, index) {
+                  
                   return Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Material(
@@ -214,7 +216,7 @@ class _HomeClubState extends State<HomeClub> {
                                     )),
                                 const SizedBox(width: 50.0,),
                                 Text(
-                                  'Past Session',
+                                  list[index],
                                   style: const TextStyle(
                                     color: Colors.black,
                                     fontFamily: 'Poppins',
