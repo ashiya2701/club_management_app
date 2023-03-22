@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../OTP/otp_screen.dart';
 import '../SignUp/form_header_widget.dart';
 
 class ForgetPasswordMailScreen extends StatelessWidget {
@@ -40,7 +41,7 @@ class ForgetPasswordMailScreen extends StatelessWidget {
                           width: double.infinity,
                           child: ElevatedButton(
                               onPressed: () {
-                                // Get.to(() => const OTPScreen());
+                                 Get.to(() => const OTPScreen());
                               },
                               child: const Text("Next"))),
                     ],
