@@ -11,7 +11,12 @@ class HomeClub extends StatefulWidget {
 }
 
 class _HomeClubState extends State<HomeClub> {
-  var list = ['Linked Lists', 'Stacks/Queues','Arrays and Strings','Introduction to C++'];
+  var list = [
+    'Linked Lists',
+    'Stacks/Queues',
+    'Arrays and Strings',
+    'Introduction to C++'
+  ];
   Widget _buildButton(String x) {
     return ElevatedButton(
       onPressed: () {},
@@ -31,9 +36,9 @@ class _HomeClubState extends State<HomeClub> {
     );
   }
 
-  Widget _buildmyCard(BuildContext context,String x, Widget route) {
+  Widget _buildmyCard(BuildContext context, String x, Widget route) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => route),
@@ -53,8 +58,10 @@ class _HomeClubState extends State<HomeClub> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Color(0xFF000102),
-                Color(0xFF464B55)], // set the gradient colors
+              colors: [
+                Color(0xFF000102),
+                Color(0xFF464B55)
+              ], // set the gradient colors
             ),
           ), // set the card height
           child: Padding(
@@ -81,35 +88,33 @@ class _HomeClubState extends State<HomeClub> {
     return Scaffold(
       appBar: AppBar(
         // centerTitle: true,
-            leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
-            ),
-           
-            title: const Text(
-              'Club Manager',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Poppins',
-                // fontSize: 26.0,
-              ),
-            ),
-           actions:[
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-            ),
-          ],
-          backgroundColor: Colors.black,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
         ),
 
-      
+        title: const Text(
+          'Club Manager',
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Poppins',
+            // fontSize: 26.0,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+          ),
+        ],
+        backgroundColor: Colors.black,
+      ),
       body: Container(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -155,15 +160,16 @@ class _HomeClubState extends State<HomeClub> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildmyCard(context,'Book a Session Slot',SessionCalendar()),
+                  _buildmyCard(
+                      context, 'Book a Session Slot', SessionCalendar()),
                   const SizedBox(
                     width: 10,
                   ),
-                  _buildmyCard(context,'Book a Hall',Hall()),
+                  _buildmyCard(context, 'Book a Hall', Hall()),
                   const SizedBox(
                     width: 10,
                   ),
-                  _buildmyCard(context,'Track Attendance',Attendance()),
+                  _buildmyCard(context, 'Track Attendance', Attendance()),
                 ],
               ),
             ),
@@ -173,8 +179,7 @@ class _HomeClubState extends State<HomeClub> {
             Expanded(
               child: ListView.builder(
                 itemCount: list.length, // set the number of items in the list
-                itemBuilder: ( context, index) {
-                  
+                itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Material(
@@ -184,15 +189,15 @@ class _HomeClubState extends State<HomeClub> {
                         height: 80.0,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
-                      gradient: const LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                        colors: [
-                          Color(0xFFF2F7FA),
-                          Color(0xFFE4EFF5),
-                        ], // set the gradient colors
-                      ),
-                    ),// set the card height
+                          gradient: const LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFFF2F7FA),
+                              Color(0xFFE4EFF5),
+                            ], // set the gradient colors
+                          ),
+                        ), // set the card height
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Center(
@@ -206,15 +211,23 @@ class _HomeClubState extends State<HomeClub> {
                                       gradient: LinearGradient(
                                         begin: Alignment.topCenter,
                                         end: Alignment.bottomCenter,
-                                        colors: [Color(0xFF000102),
-                                          Color(0xFF464B55)], // set the gradient colors
+                                        colors: [
+                                          Color(0xFF000102),
+                                          Color(0xFF464B55)
+                                        ], // set the gradient colors
                                       ),
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.all(10.0),
-                                      child: Center(child: Icon(Icons.calendar_month, color: Colors.white,)),
+                                      child: Center(
+                                          child: Icon(
+                                        Icons.calendar_month,
+                                        color: Colors.white,
+                                      )),
                                     )),
-                                const SizedBox(width: 50.0,),
+                                const SizedBox(
+                                  width: 50.0,
+                                ),
                                 Text(
                                   list[index],
                                   style: const TextStyle(
