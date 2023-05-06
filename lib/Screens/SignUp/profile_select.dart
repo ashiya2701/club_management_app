@@ -1,6 +1,7 @@
 import 'package:club_management/Screens/SignUp/signup_footer_widget.dart';
 import 'package:club_management/Screens/SignUp/signup_form.dart';
 import 'package:club_management/Screens/SignUp/signup_screen.dart';
+import 'package:club_management/Screens/SignUp/signup_student.dart';
 import 'package:flutter/material.dart';
 
 import '../Home_Club.dart';
@@ -62,8 +63,10 @@ class _ProfileSelectState extends State<ProfileSelect> {
                   height: 50, // set the height of the button
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomeClub()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpScreenStudent()));
                     },
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(),
