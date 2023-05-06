@@ -1,5 +1,4 @@
-import 'package:club_management/Screens/show_halls.dart';
-import 'package:club_management/Screens/show_halls_1.dart';
+import 'package:club_management/Screens/show_hall.dart';
 import 'package:flutter/material.dart';
 import 'package:club_management/Screens/attendance.dart';
 import 'package:club_management/Screens/calendar.dart';
@@ -156,7 +155,7 @@ class _HallState extends State<Hall> {
                         const SizedBox(height: 8.0),
                         ElevatedButton(
                           onPressed: () {
-                            Get.to(() => ShowHalls1());
+                            Get.to(() => ShowHalls());
                           },
                           child: Text('Show Halls'),
                         ),

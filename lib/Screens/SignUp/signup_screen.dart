@@ -1,4 +1,3 @@
-
 import 'package:club_management/Screens/SignUp/signup_footer_widget.dart';
 import 'package:club_management/Screens/SignUp/signup_form.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: SingleChildScrollView(
           child: Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             child: Column(
               children: const [
                 FormHeaderWidget(
