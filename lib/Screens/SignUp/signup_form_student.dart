@@ -1,3 +1,4 @@
+import 'package:club_management/Screens/Home_Student.dart';
 import 'package:flutter/material.dart';
 
 class SignUpFormStudentWidget extends StatelessWidget {
@@ -38,7 +39,10 @@ class SignUpFormStudentWidget extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeStudent()));
+                },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(),
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),

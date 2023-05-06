@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Home_Club.dart';
+
 class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
     Key? key,
@@ -44,7 +46,10 @@ class SignUpFormWidget extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeClub()));
+                },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(),
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),
