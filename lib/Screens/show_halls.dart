@@ -1,3 +1,4 @@
+import 'package:club_management/Screens/Home_Club.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -25,14 +26,14 @@ class _ShowHalls extends State<ShowHalls> {
         elevation: 5.0, // set the card elevation
         shape: RoundedRectangleBorder(
           borderRadius:
-              BorderRadius.circular(25.0), // set the rounded corner radius
+              BorderRadius.circular(15.0), // set the rounded corner radius
         ),
         child: Container(
-          width: 50.0, // set the card width
-          height: 50.0,
+          width: 75.0, // set the card width
+          height: 75.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: _isTapped ? Colors.blue : Colors.white,
+            color: _isTapped ? Colors.blue : Colors.grey,
           ), // set the card height
           child: Padding(
             padding: const EdgeInsets.all(10.0),
@@ -73,8 +74,10 @@ class _ShowHalls extends State<ShowHalls> {
         backgroundColor: Colors.black,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          SizedBox(
+            height: 40,
+          ),
           Row(
             children: [
               Expanded(
@@ -141,6 +144,9 @@ class _ShowHalls extends State<ShowHalls> {
               ),
             ],
           ),
+          SizedBox(
+            height: 80,
+          ),
           Column(
             children: [
               Row(
@@ -148,52 +154,87 @@ class _ShowHalls extends State<ShowHalls> {
                 children: [
                   _buildmyCard(context, 'M1'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   _buildmyCard(context, 'M2'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
                   _buildmyCard(context, 'M3'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
-                  _buildmyCard(context, 'M3'),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  _buildmyCard(context, 'M3'),
                 ],
+              ),
+              SizedBox(
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildmyCard(context, 'M1'),
+                  _buildmyCard(context, 'M4'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
-                  _buildmyCard(context, 'M2'),
+                  _buildmyCard(context, 'M5'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
-                  _buildmyCard(context, 'M3'),
+                  _buildmyCard(context, 'M6'),
                   const SizedBox(
-                    width: 10,
+                    width: 5,
                   ),
-                  _buildmyCard(context, 'M3'),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  _buildmyCard(context, 'M3'),
                 ],
+              ),
+              SizedBox(
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildmyCard(context, 'M1'),
+                  _buildmyCard(context, 'CH SH'),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  _buildmyCard(context, 'CS SH'),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  _buildmyCard(context, 'ME SH'),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 16,
+                  ),
+                  _buildmyCard(context, 'EE SH'),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  _buildmyCard(context, 'AUDI'),
                 ],
               ),
             ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              () => Get.to(() => HomeClub());
+            },
+            child: Text(
+              'Book',
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
           ),
         ],
       ),
