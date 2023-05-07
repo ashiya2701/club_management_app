@@ -1,9 +1,8 @@
+import 'package:club_management/Screens/Home_Student.dart';
 import 'package:flutter/material.dart';
 
-import '../Home_Club.dart';
-
-class SignUpFormWidget extends StatelessWidget {
-  const SignUpFormWidget({
+class SignUpFormStudentWidget extends StatelessWidget {
+  const SignUpFormStudentWidget({
     Key? key,
   }) : super(key: key);
 
@@ -34,12 +33,6 @@ class SignUpFormWidget extends StatelessWidget {
             const SizedBox(height: 5),
             TextFormField(
               decoration: const InputDecoration(
-                  label: Text("Club Name"),
-                  prefixIcon: Icon(Icons.home_mini_outlined)),
-            ),
-            const SizedBox(height: 5),
-            TextFormField(
-              decoration: const InputDecoration(
                   label: Text("Password"), prefixIcon: Icon(Icons.fingerprint)),
             ),
             const SizedBox(height: 10),
@@ -48,7 +41,7 @@ class SignUpFormWidget extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeClub()));
+                      MaterialPageRoute(builder: (context) => HomeStudent()));
                 },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(),

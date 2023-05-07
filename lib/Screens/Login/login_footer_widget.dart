@@ -1,3 +1,4 @@
+import 'package:club_management/Screens/SignUp/profile_select.dart';
 import 'package:flutter/material.dart';
 
 class LoginFooterWidget extends StatelessWidget {
@@ -15,14 +16,21 @@ class LoginFooterWidget extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: OutlinedButton.icon(
-            icon: const Image(image: AssetImage("assets/images/glogo.png"), width: 20.0),
+            icon: const Image(
+                image: AssetImage("assets/images/glogo.png"), width: 20.0),
             onPressed: () {},
-            label: const Text("Sign in with Google",style: TextStyle(color: Color(0xff173d45)),),
+            label: const Text(
+              "Sign in with Google",
+              style: TextStyle(color: Color(0xff173d45)),
+            ),
           ),
         ),
         const SizedBox(height: 10),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProfileSelect()));
+          },
           child: Text.rich(
             TextSpan(
                 text: "Don't have an account? ",

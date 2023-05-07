@@ -1,11 +1,12 @@
 import 'package:club_management/Screens/SignUp/signup_footer_widget.dart';
 import 'package:club_management/Screens/SignUp/signup_form.dart';
+import 'package:club_management/Screens/SignUp/signup_form_student.dart';
 import 'package:flutter/material.dart';
 
 import 'form_header_widget.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignUpScreenStudent extends StatelessWidget {
+  const SignUpScreenStudent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
                   subTitle: "Create your profile to get started with club",
                   imageHeight: 0.15,
                 ),
-                SignUpFormWidget(),
+                SignUpFormStudentWidget(),
                 SignUpFooterWidget(),
               ],
             ),
