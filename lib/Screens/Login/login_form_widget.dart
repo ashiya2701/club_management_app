@@ -1,5 +1,8 @@
 import 'package:club_management/Screens/Home_Club.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
 import '../Forgot Password/forget_password_bottom.dart';
@@ -11,6 +14,9 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _currentclub;
+    TextEditingController _email = TextEditingController();
+    TextEditingController _pass = TextEditingController();
     return Form(
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 50 - 10),
@@ -18,6 +24,7 @@ class LoginForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              controller: _email,
               decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.person_outline_outlined),
                   labelText: "Email Id",
@@ -27,6 +34,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: 20),
             TextFormField(
               obscureText: true,
+              controller: _pass,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
                 labelText: "Password",
@@ -54,9 +62,26 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                FirebaseAuth.instance
+                    .signInWithEmailAndPassword(
+                email: _email.text, password: _pass.text)
+                    .then((value) {
+                  FirebaseFirestore.instance
+                      .collection('users')
+                      .doc(FirebaseAuth.instance.currentUser?.uid)
+                      .get()
+                      .then((DocumentSnapshot doc) {
+                    if (doc.exists) {
+                      _currentclub = doc.data();
+                    }
+                  });
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomeClub()));
+                }).onError((error, stackTrace){
+                  print("Error ${error.toString()}");
+                });
                 },
+                  
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(),
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),
