@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 // import 'package:get/get.dart';
 
-import '../Forgot Password/forget_password_bottom.dart';
+import '../../Forgot Password/forget_password_bottom.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -62,33 +62,32 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                email: _email.text, password: _pass.text)
-                    .then((value) {
-                  FirebaseFirestore.instance
-                      .collection('users')
-                      .doc(FirebaseAuth.instance.currentUser?.uid)
-                      .get()
-                      .then((DocumentSnapshot doc) {
-                    if (doc.exists) {
-                      _currentclub = doc.data();
-                    }
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: _email.text, password: _pass.text)
+                      .then((value) {
+                    FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(FirebaseAuth.instance.currentUser?.uid)
+                        .get()
+                        .then((DocumentSnapshot doc) {
+                      if (doc.exists) {
+                        _currentclub = doc.data();
+                      }
+                    });
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeClub()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
                   });
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeClub()));
-                }).onError((error, stackTrace){
-                  print("Error ${error.toString()}");
-                });
                 },
-                  
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(),
                     foregroundColor: Color.fromARGB(255, 255, 255, 255),
                     backgroundColor: Color(0xff173d45),
                     side: BorderSide(color: Color(0xff272727)),
                     padding: EdgeInsets.symmetric(vertical: 15)),
-                child: Text("Login".toUpperCase()),
+                child: Text("Club Login".toUpperCase()),
               ),
             ),
           ],
