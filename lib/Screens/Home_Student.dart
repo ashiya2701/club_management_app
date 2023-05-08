@@ -25,17 +25,17 @@ class _HomeStudentState extends State<HomeStudent> {
     {
       "title": "Coding",
       "subtitle": "Shared results of Coder of the Month",
-      "imageUrl": 'assets/images/d.cypher.jpeg'
+      "imageUrl": 'assets/images/codingclub.png'
     },
     {
       "title": "Alankar",
       "subtitle": "Organising vent of Vistoso 2023",
-      "imageUrl": 'assets/images/d.cypher.jpeg'
+      "imageUrl": 'assets/images/alankar.png'
     },
     {
       "title": "Aeromodelling",
       "subtitle": "Scheduled a session on 19th March",
-      "imageUrl": 'assets/images/d.cypher.jpeg'
+      "imageUrl": 'assets/images/aermodelling.jpeg'
     },
   ];
   @override
@@ -85,7 +85,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/images/profile.png'),
+                      image: AssetImage('assets/images/darren.jpeg'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -165,7 +165,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
+                          image: AssetImage('assets/images/aermodelling.jpeg'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -180,7 +180,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
+                          image: AssetImage('assets/images/codingclub.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -195,7 +195,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
+                          image: AssetImage('assets/images/alankar.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -220,7 +220,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
+                          image: AssetImage('assets/images/debsoc.jpeg'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -238,7 +238,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
+                          image: AssetImage('assets/images/enactus.jpeg'),
                           fit: BoxFit.cover,
                         ),
                       ),

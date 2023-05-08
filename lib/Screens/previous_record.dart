@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:club_management/Screens/attendance.dart';
 import 'package:club_management/Screens/calendar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'attendance2.dart';
-import 'previous_record.dart';
 
-class Attendance extends StatefulWidget {
-  const Attendance({Key? key}) : super(key: key);
+class PreviousRecords extends StatefulWidget {
+  const PreviousRecords({super.key});
 
   @override
-  State<Attendance> createState() => _AttendanceState();
+  State<PreviousRecords> createState() => _PreviousRecordsState();
 }
 
-class _AttendanceState extends State<Attendance> {
+class _PreviousRecordsState extends State<PreviousRecords> {
   @override
+
   DateTime date_now = DateTime.now();
   DateTime time_now = DateTime.now();
 
@@ -119,40 +117,12 @@ class _AttendanceState extends State<Attendance> {
     );
   }
 
-  Widget _buildbtn(BuildContext context, String x, Widget route) {
-    return Padding(
-      padding: const EdgeInsets.all(13.0),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => route),
-        );
-          
-        },
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          elevation: 5.0,
-          padding: EdgeInsets.all(15.0),
-          backgroundColor: Color(0xFF000102),
-          foregroundColor: Colors.blueGrey,
-        ),
-        child: Text(
-          x,
-          style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
-        ),
-      ),
-    );
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           // centerTitle: true,
           title: const Text(
-            'Attendance',
+            'Previous Records',
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'Poppins',
@@ -165,19 +135,7 @@ class _AttendanceState extends State<Attendance> {
             padding: const EdgeInsets.all(15.0),
             child: Column(children: [
               _buildmyCard(context, 'Coding Club', 'Session Details: '),
-              Center(
-                child: Image.asset(
-                  'assets/images/schedule.png',
-                  height: 300,
-                  width: 300,
-                ),
-              ),
-              Row(
-                children: [
-                  _buildbtn(context, 'Track Attendance', TrackAttendance()),
-                  _buildbtn(context, 'Prevoius Records', PreviousRecords()),
-                ],
-              ),
+           
             ])));
   }
 }
