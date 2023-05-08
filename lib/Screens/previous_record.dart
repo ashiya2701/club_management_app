@@ -1,7 +1,12 @@
+import 'package:club_management/Screens/bar_model.dart';
 import 'package:flutter/material.dart';
 import 'package:club_management/Screens/calendar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:pie_chart/pie_chart.dart';
+
+
 
 class PreviousRecords extends StatefulWidget {
   const PreviousRecords({super.key});
@@ -12,6 +17,28 @@ class PreviousRecords extends StatefulWidget {
 
 class _PreviousRecordsState extends State<PreviousRecords> {
   @override
+
+  Map<String, double> dataMap = {
+    "Present": 65,
+    "Absent": 45,
+  };
+  
+  static List<charts.Series<BarModel, String>> _createSampleData(){
+    final data = [
+      BarModel("Session 1", 50),
+      BarModel("Session 2", 70),
+      BarModel("session 3", 65),
+    ];
+    return [
+      charts.Series<BarModel, String>(
+        data:data, 
+        id: 'Records',
+        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
+        domainFn: (BarModel barModeel, _) =>barModeel.session,
+        measureFn: (BarModel barModeel, _) => barModeel.value,
+      )
+    ];
+  }
 
   DateTime date_now = DateTime.now();
   DateTime time_now = DateTime.now();
@@ -30,7 +57,7 @@ class _PreviousRecordsState extends State<PreviousRecords> {
           ),
           child: Container(
             width: 500.0, // set the card width
-            height: 200.0,
+            height: 600.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0),
               gradient: LinearGradient(
@@ -70,48 +97,69 @@ class _PreviousRecordsState extends State<PreviousRecords> {
                   SizedBox(
                     height: 25,
                   ),
-                  Text(
-                    y,
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
+                  Center(
+                    child: Text(
+                      y,
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18,
+                      ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          formattedDate,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18,
+                  
+                  Center(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            formattedDate,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Text(
-                          formattedTime,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18,
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            formattedTime,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Center(
+                      child: PieChart(
+                        dataMap: dataMap, 
+                        chartRadius: MediaQuery.of(context).size.width/1.7,
+                        legendOptions: LegendOptions(
+                          legendPosition: LegendPosition.bottom,
+                        ),
+                        chartValuesOptions: ChartValuesOptions(
+                          showChartValuesInPercentage: true,
+                        ),
+                      )
+
+                    )
                   ),
                 ],
               ),
             ),
           ),
+          
         ),
       ),
     );
@@ -131,11 +179,22 @@ class _PreviousRecordsState extends State<PreviousRecords> {
           ),
           backgroundColor: Colors.black,
         ),
-        body: Container(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(children: [
-              _buildmyCard(context, 'Coding Club', 'Session Details: '),
-           
-            ])));
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(children: [
+                _buildmyCard(context, 'Coding Club', 'Session Details: '),
+                SizedBox(height: 60),
+                Container(
+                  height : 200,
+                  child: charts.BarChart(
+                    _createSampleData(),
+                    animate: false,
+                  )
+                ),
+              
+              ])),
+        ));
   }
 }
