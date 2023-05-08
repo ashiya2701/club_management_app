@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Home_Club.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);
@@ -162,7 +163,33 @@ class _DetailsState extends State<Details> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            //func
+                            showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('Confirm Session Booking'),
+                              content: Text('Are you sure you want to book this slot for this session?'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('Cancel'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => HomeClub()),
+                                    );
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                            
                           },
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(

@@ -2,6 +2,7 @@ import 'package:club_management/Screens/Home_Club.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'Home_Club.dart';
 
 class ShowHalls extends StatefulWidget {
   const ShowHalls({Key? key}) : super(key: key);
@@ -39,7 +40,35 @@ class _ShowHalls extends State<ShowHalls> {
 
   Widget _buildButton(String x) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Confirm Booking'),
+          content: Text('Are you sure you want to book this hall?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeClub()),
+                );
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+
+      },
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
