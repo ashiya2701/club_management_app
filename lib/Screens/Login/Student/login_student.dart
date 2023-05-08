@@ -1,15 +1,18 @@
+import 'package:club_management/Screens/Login/login_footer_widget.dart';
+import 'package:club_management/Screens/Login/Student/login_form_student.dart';
+import 'package:club_management/Screens/Login/login_header_widget.dart';
 import 'package:flutter/material.dart';
 
-import 'login_footer_widget.dart';
-import 'login_form_widget.dart';
-import 'login_header_widget.dart';
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreenStudent extends StatefulWidget {
+  const LoginScreenStudent({super.key});
 
   @override
+  State<LoginScreenStudent> createState() => _LoginScreenStudent();
+}
+
+class _LoginScreenStudent extends State<LoginScreenStudent> {
+  @override
   Widget build(BuildContext context) {
-    //Get the size in LoginHeaderWidget()
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -20,7 +23,7 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 LoginHeaderWidget(),
-                LoginForm(),
+                LoginFormStudent(),
                 LoginFooterWidget(),
               ],
             ),

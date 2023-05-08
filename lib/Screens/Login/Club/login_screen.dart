@@ -1,20 +1,15 @@
-import 'package:club_management/Screens/Login/login_footer_widget.dart';
-import 'package:club_management/Screens/Login/login_form_widget.dart';
-import 'package:club_management/Screens/Login/login_header_widget.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
+import '../login_footer_widget.dart';
+import 'login_form_widget.dart';
+import '../login_header_widget.dart';
 
-class LoginScreenStudent extends StatefulWidget {
-  const LoginScreenStudent({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
-  @override
-  State<LoginScreenStudent> createState() => _LoginScreenStudent();
-}
-
-class _LoginScreenStudent extends State<LoginScreenStudent> {
   @override
   Widget build(BuildContext context) {
+    //Get the size in LoginHeaderWidget()
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),

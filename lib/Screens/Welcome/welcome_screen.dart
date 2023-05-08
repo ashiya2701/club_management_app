@@ -3,7 +3,7 @@ import 'package:club_management/Screens/SignUp/profile_select.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Login/login_screen.dart';
+import '../Login/Club/login_screen.dart';
 import '../Onboarding/onboarding_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {

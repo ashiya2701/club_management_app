@@ -1,6 +1,6 @@
 import 'package:club_management/Screens/Login/login_header_widget.dart';
-import 'package:club_management/Screens/Login/login_screen.dart';
-import 'package:club_management/Screens/Login/login_student.dart';
+import 'package:club_management/Screens/Login/Club/login_screen.dart';
+import 'package:club_management/Screens/Login/Student/login_student.dart';
 import 'package:club_management/Screens/SignUp/signup_footer_widget.dart';
 import 'package:club_management/Screens/SignUp/signup_form.dart';
 import 'package:club_management/Screens/SignUp/signup_screen.dart';
