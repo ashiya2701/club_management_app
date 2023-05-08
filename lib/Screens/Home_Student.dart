@@ -1,6 +1,8 @@
 import 'dart:ffi';
+import 'package:club_management/Screens/student_attendance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'student_attendance.dart';
 
 class HomeStudent extends StatefulWidget {
   const HomeStudent({super.key});
@@ -85,7 +87,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/images/darren.jpeg'),
+                      image: AssetImage('assets/images/profile.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -128,7 +130,7 @@ class _HomeStudentState extends State<HomeStudent> {
               height: 20,
             ),
             Text(
-              'Clubs Enrolled',
+              'Mark Attendance',
               textAlign: TextAlign.left,
               style: TextStyle(
                 color: Colors.black,
@@ -144,61 +146,61 @@ class _HomeStudentState extends State<HomeStudent> {
               children: [
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/d.cypher.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/d.cypher.jpeg'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/aermodelling.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/debsoc.jpeg'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/codingclub.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/codingclub.png'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/alankar.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/enactus.jpeg'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
@@ -214,16 +216,16 @@ class _HomeStudentState extends State<HomeStudent> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/debsoc.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/alankar.png'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
@@ -232,16 +234,16 @@ class _HomeStudentState extends State<HomeStudent> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/enactus.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                    IconButton(
+                      icon: Image.asset('assets/images/aermodelling.jpeg'),
+                      iconSize: 60,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TrackStudentAttendance()),
+                        );
+                        // handle button click
+                      },
                     ),
                   ],
                 ),
