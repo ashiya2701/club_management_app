@@ -13,13 +13,8 @@ class PresentStudents extends StatefulWidget {
 class _PresentStudentsState extends State<PresentStudents> {
   @override
   var list = [
-    'Ayush                    2020eeb1113',
-    'Ashiya                   2020mcb1231',
-    'Ayushi                   2020mcb1339',
     'Princy                   2020mcb1193',
-    'Ayushi                   2020mcb1233',
-    'Aena                     2020eeb1128'
-    
+    'Aena                     2020eeb1128'    
   ];
   
 
@@ -74,7 +69,7 @@ class _PresentStudentsState extends State<PresentStudents> {
                 child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                    'Present Students',
+                    'List of Students present',
                     textAlign: TextAlign.center,
                      style: TextStyle(fontSize: 20, color: Colors.white,),
                    ),
@@ -140,7 +135,7 @@ class _PresentStudentsState extends State<PresentStudents> {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                'Present 6/10',
+                'Present: 2/10',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,

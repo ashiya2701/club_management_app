@@ -14,13 +14,8 @@ class TrackAtd extends StatefulWidget {
 class _TrackAtdState extends State<TrackAtd> {
   @override
     var list = [
-    'Ayush                    2020eeb1113',
-    'Ashiya                   2020mcb1231',
-    'Ayushi                   2020mcb1339',
     'Princy                   2020mcb1193',
-    'Ayushi                   2020mcb1233',
-    'Aena                     2020eeb1128'
-    
+    'Aena                     2020eeb1128'    
   ];
 
 

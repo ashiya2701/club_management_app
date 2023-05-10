@@ -20,15 +20,15 @@ class _PreviousRecordsState extends State<PreviousRecords> {
   @override
 
   Map<String, double> dataMap = {
-    "Present": 65,
-    "Absent": 45,
+    "Present": 2,
+    "Absent": 8,
   };
   
   static List<charts.Series<BarModel, String>> _createSampleData(){
     final data = [
-      BarModel("Session 1", 50),
-      BarModel("Session 2", 70),
-      BarModel("session 3", 65),
+      BarModel("Session 1", 3),
+      BarModel("Session 2", 5),
+      BarModel("session 3", 2),
     ];
     return [
       charts.Series<BarModel, String>(
