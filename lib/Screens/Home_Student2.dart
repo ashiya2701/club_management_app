@@ -87,7 +87,7 @@ class _HomeStudentState extends State<HomeStudent> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/images/stufemale.png'),
+                      image: AssetImage('assets/images/femalestudent.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -100,7 +100,7 @@ class _HomeStudentState extends State<HomeStudent> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Aena',
+                          'Princy',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 25,
@@ -113,7 +113,7 @@ class _HomeStudentState extends State<HomeStudent> {
                           height: 10,
                         ),
                         Text(
-                          '2020EEB1356',
+                          '2020mcb1193',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
