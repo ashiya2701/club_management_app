@@ -2,6 +2,7 @@ import 'package:club_management/Screens/attendance.dart';
 import 'package:club_management/Screens/calendar.dart';
 import 'package:club_management/Screens/hall.dart';
 import 'package:flutter/material.dart';
+import 'membersList.dart';
 
 class HomeClub extends StatefulWidget {
   const HomeClub({Key? key}) : super(key: key);
@@ -19,7 +20,17 @@ class _HomeClubState extends State<HomeClub> {
   ];
   Widget _buildButton(String x) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        if (x == 'Members List') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MemberList()),
+        );
+  }
+
+
+
+      },
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),

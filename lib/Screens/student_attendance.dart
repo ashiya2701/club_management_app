@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-
+import 'record_atd.dart';
 
 class TrackStudentAttendance extends StatefulWidget {
   const TrackStudentAttendance({super.key});
@@ -17,8 +17,23 @@ class _TrackStudentAttendanceState extends State<TrackStudentAttendance> {
       padding: const EdgeInsets.all(13.0),
       child: ElevatedButton(
         onPressed: () {
-          
-          //func
+          showDialog(
+            context: context,
+            barrierDismissible: false, // prevent user from dismissing dialog
+            builder: (BuildContext context) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+          },
+        );
+
+        // Wait for 2 seconds before navigating to next page
+        Future.delayed(Duration(seconds: 3), () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RecordAtd()),
+          );
+        });
         },
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(

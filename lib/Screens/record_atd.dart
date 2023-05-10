@@ -2,31 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:club_management/Screens/calendar.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'trk_attd.dart';
+import 'Home_Student.dart';
 
-
-class TrackAttendance extends StatefulWidget {
-  const TrackAttendance({super.key});
+class RecordAtd extends StatefulWidget {
+  const RecordAtd({super.key});
 
   @override
-  State<TrackAttendance> createState() => _TrackAttendanceState();
+  State<RecordAtd> createState() => _RecordAtdState();
 }
 
-class _TrackAttendanceState extends State<TrackAttendance> {
-  
+class _RecordAtdState extends State<RecordAtd> {
   @override
 
-
-
-  Widget _buildbtn(BuildContext context, String x) {
+    Widget _buildbtn(BuildContext context, String x) {
     return Padding(
       padding: const EdgeInsets.all(13.0),
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TrackAtd()),
-          );
+          MaterialPageRoute(builder: (context) => HomeStudent()),
+        );
         },
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -62,26 +58,33 @@ class _TrackAttendanceState extends State<TrackAttendance> {
         body: Container(
             padding: const EdgeInsets.all(15.0),
             child: Column(children: [  
-              SizedBox(height: 50),
-              Text('Make sure your Bluetooth and location are given permission to this app',
+              SizedBox(height: 100),
+              Text('You were marked Present',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 13, 125, 16),
+              fontFamily: 'Arial',
+              fontStyle: FontStyle.italic,
               ),
-              SizedBox(height: 30),
+              ),
+              SizedBox(height: 100),
               Center(
                 child: Image.asset(
-                  'assets/images/record_atd.png',
-                  height: 300,
-                  width: 300,
+                  'assets/images/greentick.png',
+                  height: 100,
+                  width: 100,
                 ),
               ),
               SizedBox(height: 90),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildbtn(context, 'Record Attendance'),
+                  _buildbtn(context, 'Go to home page'),
                 ],
               ),
+             
             ])));
-  }
+}
 }
