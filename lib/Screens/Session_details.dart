@@ -103,118 +103,121 @@ class _DetailsState extends State<Details> {
             ], // set the gradient colors
           ),
         ),
-        child: Expanded(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              _buildTF(
-                  'Topic', "What's the session about?", name, Colors.white),
-              const SizedBox(
-                height: 20,
-              ),
-              _buildTF(
-                  'Pre-Reads',
-                  'Fill in any pre-reads for session (if any)',
-                  pre_req,
-                  Colors.white),
-              Container(
-                width: 600,
-                height: 450,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  gradient: const LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFFF2F7FA),
-                      Color(0xFFE4EFF5),
-                    ], // set the gradient colors
-                  ),
+
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 20
                 ),
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      _buildTF(
-                          'Start-Time', '4:00 pm', start_time, Colors.black),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      _buildTF('End-Time', '5:00 pm', end_time, Colors.black),
-                      const SizedBox(
-                        height: 38,
-                      ),
-                      Container(
-                        height: 60,
-                        width: 300,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Color(0xFF000102),
-                              Color(0xFF464B55)
-                            ], // set the gradient colors
-                          ),
+                _buildTF(
+                    'Topic', "What's the session about?", name, Colors.white),
+                const SizedBox(
+                  height: 20,
+                ),
+                _buildTF(
+                    'Pre-Reads',
+                    'Fill in any pre-reads for session (if any)',
+                    pre_req,
+                    Colors.white),
+                Container(
+                  width: 600,
+                  height: 450,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    gradient: const LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color(0xFFF2F7FA),
+                        Color(0xFFE4EFF5),
+                      ], // set the gradient colors
+                    ),
+                  ),
+                  child: Expanded(
+                    child: Column(
+                      children: [
+                        _buildTF(
+                            'Start-Time', '4:00 pm', start_time, Colors.black),
+                        const SizedBox(
+                          height: 20,
                         ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text('Confirm Session Booking'),
-                              content: Text('Are you sure you want to book this slot for this session?'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: Text('Cancel'),
-                                ),
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => HomeClub()),
-                                    );
-                                  },
-                                  child: Text('OK'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                            
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
+                        _buildTF('End-Time', '5:00 pm', end_time, Colors.black),
+                        const SizedBox(
+                          height: 38,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Color(0xFF000102),
+                                Color(0xFF464B55)
+                              ], // set the gradient colors
                             ),
-                            elevation: 5.0,
-                            padding: EdgeInsets.all(15.0),
-                            backgroundColor: Colors.transparent,
-                            foregroundColor: Colors.blueGrey,
                           ),
-                          child: Text(
-                            'Send Message to Members',
-                            style: const TextStyle(
-                                color: Colors.white, fontFamily: 'Poppins'),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Confirm Session Booking'),
+                                content: Text('Are you sure you want to book this slot for this session?'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => HomeClub()),
+                                      );
+                                    },
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              elevation: 5.0,
+                              padding: EdgeInsets.all(15.0),
+                              backgroundColor: Colors.transparent,
+                              foregroundColor: Colors.blueGrey,
+                            ),
+                            child: Text(
+                              'Send Message to Members',
+                              style: const TextStyle(
+                                  color: Colors.white, fontFamily: 'Poppins'),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+                      ],
+                    ),
           ),
-        ),
-      ),
+                ),
+    ],
+    ),
+    ),
+    ),
     );
+
   }
 }
